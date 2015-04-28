@@ -2,7 +2,8 @@ todoApp = angular.module('todo', [
   'ngRoute',
   'ngResource',
   'todoControllers',
-  'todoServices'
+  'todoServices',
+  'todoDirectives'
 ]);
 
 todoApp.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {

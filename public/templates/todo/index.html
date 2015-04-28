@@ -2,14 +2,7 @@
 <div style="height: 50px;">
   <div class="pull-left">
     <button id="new-todo" type="button" class="btn btn-primary btn" ng-click="showForm()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
-    <form name="newTodoForm" id="new-todo-form" ng-submit="newTodoForm.$valid && addTodoItem()" class="form-inline" novalidate>
-      <div class="form-group" ng-class="{ 'has-error': newTodoForm.$invalid && newTodoForm.$dirty }">
-        <input type="text" class="form-control" name="title" ng-model="todo.title" placeholder="Enter title" required></input>
-      </div>
-      <button type="submit" class="btn btn-success">
-        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
-      </button>
-    </form>
+    <new-todo-form></new-todo-form>
   </div>
   <div class="pull-right">
     Search: <input type="text" ng-model="query">

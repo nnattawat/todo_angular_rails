@@ -40,8 +40,6 @@ todoControllers.controller('TodoItemsController', ['$scope', 'TodoItems', 'TodoI
       angular.element('#new-todo-form input').val('');
     }
 
-    $scope.hideForm();
-
   }]);
 
 todoControllers.controller('TodoItemController', ['$scope', '$routeParams', 'TodoItem',
