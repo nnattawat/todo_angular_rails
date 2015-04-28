@@ -1,0 +1,35 @@
+<h2 >Todo List</h2>
+<div style="height: 50px;">
+  <div class="pull-left">
+    <button id="new-todo" type="button" class="btn btn-primary btn" ng-click="showForm()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+    <form name="newTodoForm" id="new-todo-form" ng-submit="newTodoForm.$valid && addTodoItem()" class="form-inline" novalidate>
+      <div class="form-group" ng-class="{ 'has-error': newTodoForm.$invalid && newTodoForm.$dirty }">
+        <input type="text" class="form-control" name="title" ng-model="todo.title" placeholder="Enter title" required></input>
+      </div>
+      <button type="submit" class="btn btn-success">
+        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+      </button>
+    </form>
+  </div>
+  <div class="pull-right">
+    Search: <input type="text" ng-model="query">
+    Sort by:
+    <select ng-model="orderProp">
+      <option value="created_at">Newest</option>
+      <option value="-created_at">Oldest</option>
+    </select>
+  </div>
+</div>
+<div>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="todo in todoItems | filter:query | orderBy:orderProp" ng-class="{ 'list-group-item-success': todo.completed }">
+      <a href="#/todo/{{todo.id}}">
+        {{ todo.title }}
+      </a>
+      <button class="btn btn-danger pull-right btn-xs" ng-click="remove(todo)">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+      </button>
+    </li>
+  </div>
+</div>
+<!-- <pre>{{ todoItems | json }}</pre> -->
