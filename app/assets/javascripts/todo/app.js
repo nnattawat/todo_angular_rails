@@ -1,4 +1,4 @@
-todoApp = angular.module('todo', [
+var todoApp = angular.module('todo', [
   'ngRoute',
   'ngResource',
   'todoControllers',
