@@ -3,3 +3,5 @@ log
 *.log
 vendor/assets/bower_components
 vendor/assets/bower.json
+tmp/**/*
+tmp/*.*
