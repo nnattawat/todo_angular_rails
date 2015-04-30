@@ -23,11 +23,9 @@ todoControllers.controller('TodoItemsController', ['$scope', 'TodoItem',
     };
 
     $scope.remove = function(todo) {
-      if (confirm("Are you sure?")) {
-        todo.$delete(function() {
-          $scope.todoItems = TodoItem.query();   // after deleted, fetch collection.
-        });
-      }
+      todo.$delete(function() {
+        $scope.todoItems = TodoItem.query();   // after deleted, fetch collection.
+      });
     };
 
   }]);
