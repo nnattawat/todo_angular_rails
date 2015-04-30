@@ -5,3 +5,11 @@
 .ng-dirty.ng-invalid {
   // style error inputs
 }
+
+.list-group-item .delete-btn {
+  visibility: hidden;
+}
+
+.list-group-item:hover .delete-btn {
+  visibility: visible;
+}
