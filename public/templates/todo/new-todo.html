@@ -1,0 +1,12 @@
+<button id="new-todo" type="button" class="btn btn-primary btn" ng-click="addState = true; newTodoForm.$setPristine();" ng-hide="addState">
+  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+</button>
+
+<form name="newTodoForm" id="new-todo-form" ng-submit="newTodoForm.$valid && addTodoItem(); addState = false;" class="form-inline" novalidate ng-show="addState">
+  <div class="form-group" ng-class="{ 'has-error': newTodoForm.$invalid && newTodoForm.$dirty }">
+    <input type="text" class="form-control" name="title" ng-model="todo.title" placeholder="Enter title" required></input>
+  </div>
+  <button type="submit" class="btn btn-success">
+    <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+  </button>
+</form>

@@ -1,8 +1,0 @@
-<form name="newTodoForm" id="new-todo-form" ng-submit="newTodoForm.$valid && addTodoItem()" class="form-inline" style="display: none" novalidate>
-  <div class="form-group" ng-class="{ 'has-error': newTodoForm.$invalid && newTodoForm.$dirty }">
-    <input type="text" class="form-control" name="title" ng-model="todo.title" placeholder="Enter title" required></input>
-  </div>
-  <button type="submit" class="btn btn-success">
-    <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
-  </button>
-</form>

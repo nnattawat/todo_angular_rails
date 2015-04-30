@@ -14,7 +14,7 @@ todoControllers.controller('TodoItemsController', ['$scope', 'TodoItem',
     $scope.addTodoItem = function() {
       $scope.todo.completed = false;
       $scope.todo.$save(function(data) {
-        $scope.hideForm();
+        $scope.todo = new TodoItem();
         $scope.todoItems.push(new TodoItem(data.toJSON()));
       }, function(error) {
         console.log(error)
@@ -29,17 +29,6 @@ todoControllers.controller('TodoItemsController', ['$scope', 'TodoItem',
         });
       }
     };
-
-    $scope.showForm = function() {
-      angular.element('#new-todo').hide();
-      angular.element('#new-todo-form').show();
-    };
-
-    $scope.hideForm = function() {
-      angular.element('#new-todo').show();
-      angular.element('#new-todo-form').hide();
-      angular.element('#new-todo-form input').val('');
-    }
 
   }]);
 
