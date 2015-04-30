@@ -1,0 +1,26 @@
+<h2 class="row control">Todo List</h2>
+<div class="row control">
+  <div class="pull-left">
+    <new-todo-list></new-todo-list>
+  </div>
+  <div class="pull-right">
+    <div class="form-inline">
+      <div class="form-group">
+        <label>Search</label>
+        <input type="text" class="form-control" ng-model="query">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="todoList in todoLists | filter:query ">
+      <a href="#/todo_lists/{{todoList.id}}/todo_list_items">
+        {{ todoList.title }}
+      </a>
+      <button class="btn btn-danger pull-right btn-xs delete-btn" ng-click="remove(todoList)">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+      </button>
+    </li>
+  </div>
+</div>

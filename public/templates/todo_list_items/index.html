@@ -1,0 +1,42 @@
+<h2 class="row control">
+  {{ todoList.title }}
+</h2>
+<p>{{ todoList.description }}</p>
+<div class="row control">
+  <div class="pull-left">
+    <new-todo-list-item></new-todo-list-item>
+  </div>
+  <div class="pull-right">
+    <div class="form-inline">
+      <div class="form-group">
+        <label>Search</label>
+        <input type="text" class="form-control" ng-model="query">
+      </div>
+      <div class="form-group">
+        <label>Sort by</label>
+        <select ng-model="orderProp">
+          <option value="created_at">Newest</option>
+          <option value="-created_at">Oldest</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="todoListItem in todoListItems | filter:query | orderBy:orderProp" ng-class="{ 'list-group-item-success': todoListItem.completed }">
+      {{ todoListItem.title }}
+      <div class="pull-right">
+        <button class="btn btn-default btn-xs complete-btn" ng-click="complete(todoListItem, false)" ng-show="todoListItem.completed">
+          <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+        </button>
+        <button class="btn btn-default btn-xs complete-btn" ng-click="complete(todoListItem, true)" ng-hide="todoListItem.completed">
+          <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+        </button>
+        <button class="btn btn-danger btn-xs delete-btn" ng-click="remove(todoListItem)">
+          <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+        </button>
+      </div>
+    </li>
+  </div>
+</div>

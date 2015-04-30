@@ -6,12 +6,23 @@
   // style error inputs
 }
 
-.list-group-item .delete-btn {
-  visibility: hidden;
-}
+.list-group-item {
 
-.list-group-item:hover .delete-btn {
-  visibility: visible;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+
+  .delete-btn, .complete-btn {
+    visibility: hidden;
+  }
+
+  &:hover {
+    .delete-btn, .complete-btn {
+      visibility: visible;
+    }
+  }
+
 }
 
 .control {

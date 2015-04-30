@@ -4,7 +4,7 @@
 
 <form name="newTodoForm" id="new-todo-form" ng-submit="newTodoForm.$valid && addTodoItem(); addState = false;" class="form-inline" novalidate ng-show="addState">
   <div class="form-group" ng-class="{ 'has-error': newTodoForm.$invalid && newTodoForm.$dirty }">
-    <input type="text" class="form-control" name="title" ng-model="todo.title" placeholder="Enter title" required></input>
+    <input type="text" class="form-control" name="title" ng-model="todoListItem.title" placeholder="Enter title" required></input>
   </div>
   <div class="btn-group" role="group" aria-label="...">
     <button type="button" class="btn btn-default" ng-click="addState = false;">
@@ -14,5 +14,4 @@
       <span class="glyphicon glyphicon-ok"></span>
     </button>
   </div>
-  
 </form>

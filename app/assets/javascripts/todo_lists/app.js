@@ -9,16 +9,16 @@ var todoApp = angular.module('todo', [
 todoApp.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
 
   $routeProvider.
-    when('/todo', {
-      templateUrl: '/templates/todo/index.html',
-      controller: 'TodoItemsController'
+    when('/todo_lists', {
+      templateUrl: '/templates/todo_lists/index.html',
+      controller: 'TodoListsController'
     }).
-    when('/todo/:todoId', {
-      templateUrl: '/templates/todo/show.html',
-      controller: 'TodoItemController'
+    when('/todo_lists/:todoListId/todo_list_items', {
+      templateUrl: '/templates/todo_list_items/index.html',
+      controller: 'TodoListItemsController'
     }).
     otherwise({
-      redirectTo: '/todo'
+      redirectTo: '/todo_lists'
     });
 
   // set security token for rail

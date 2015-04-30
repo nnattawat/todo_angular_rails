@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150104094449) do
+ActiveRecord::Schema.define(version: 20150430040345) do
 
-  create_table "todo_items", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.boolean  "completed",  limit: 1
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+  create_table "todo_list_items", force: :cascade do |t|
+    t.string   "title",        limit: 255
+    t.boolean  "completed",    limit: 1
+    t.integer  "todo_list_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "todo_lists", force: :cascade do |t|
+    t.string   "title",       limit: 255
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
 end
