@@ -1,0 +1,17 @@
+web:
+  build: .
+  volumes:
+    - .:/todo_angular_rails
+  ports:
+    - "3001:3001"
+  links:
+    - db
+  env_file:
+    - '.env.web'
+  command: bundle exec rails s -p 3001 -b '0.0.0.0'
+db:
+  image: library/mysql:5.5
+  ports:
+    - "3306:3306"
+  env_file:
+    - '.env.db'
